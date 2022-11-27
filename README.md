@@ -12,7 +12,7 @@ within a string. They are also frequently used to validate input.
 
 An example of a regex can be seen above. For the purpose of this tutorial, we will be looking at a sequence 
 of characters that can be used as a regex to search for most URLs, with the exception of some edge cases. The tutorial will break down 
-the components of the "Matching a URL" regex to explore the regex components in general. 
+the components of the "Matching a URL" regex to explore regex components in general. 
 
 ## Table of Contents
 
