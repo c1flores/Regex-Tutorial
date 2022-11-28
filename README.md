@@ -31,8 +31,27 @@ the components of the "Matching a URL" regex to explore regex components in gene
 ## Regex Components
 
 ### Anchors
+Anchors have special meaning in regular expressions. They do not match any character. Instead, they match a position before or after characters:
+- ```^``` – The caret anchor matches the beginning of the text. Specifically, it signifies a string that begins with the characters that follow it. This includes an exact string match, such as ```^The``` where the strings ```The``` or ```The person``` match, but ```the``` and ```the person``` do not. This is because regex is case-sensitive. 
+
+- ```$``` – The dollar anchor matches the end of the text. It signifies a string that ends with the characters that precede it. Similar to the caret ```^``` anchor, it can be preceded by an exact string or a range of possible matches. 
+
+In our "Matching a URL" regex, the string must start and end with something that conforms to the patterns defined between ```^``` and ```$```.
 
 ### Quantifiers
+Quantifiers are how we read occurrences of certain patterns or characters in a regex. They can be appended at the end of any character, string, or pattern. Quantifiers are inherently greedy, meaning they match as many occurrences of particular patterns as possible. They include the following:
+- ```*``` - Matches the pattern zero or more times.
+- ```+``` - Matches the pattern one or more times.
+- ```?``` - Matches the pattern zero or one time.
+- ```{}``` - Curly brackets can provide three different ways to set limits for a match:
+  - ```{ n }``` - Matches the pattern exactly ```n``` number of times.
+  - ```{ n, }``` - Matches the pattern pattern at least ```n``` number of times.
+  - ```{ n, x }``` - Matches the pattern from a minimum of ```n``` number of times to a maximum of ```x``` number of times.
+  
+ Each of these quantifiers can be made lazy by adding the ```?``` symbol after it, meaning it will match as few occurrences as possible. 
+ 
+ In our "Matching a URL" regex, the following quantifiers are used in these instances:
+  
 
 ### OR Operator
 
