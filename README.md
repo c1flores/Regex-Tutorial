@@ -7,8 +7,9 @@ patterns of characters within a string, or to find and replace a character or se
 within a string. They are also frequently used to validate input.
 
 ## Summary
-
-**/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/**
+```
+/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+```
 
 An example of a regex can be seen above. For the purpose of this tutorial, we will be looking at a sequence 
 of characters that can be used as a regex to search for most URLs, with the exception of some edge cases. The tutorial will break down 
@@ -18,15 +19,11 @@ the components of the "Matching a URL" regex to explore regex components in gene
 
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
-- [OR Operator](#or-operator)
 - [Character Classes](#character-classes)
 - [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
 
@@ -50,10 +47,27 @@ Quantifiers are how we read occurrences of certain patterns or characters in a r
   
  Each of these quantifiers can be made lazy by adding the ```?``` symbol after it, meaning it will match as few occurrences as possible. 
  
- In our "Matching a URL" regex, the following quantifiers are used in these instances:
+ In our "Matching a URL" regex, the following quantifiers are used in the following instances:
+ - The initial ```https``` component: 
+  ```
+  (https?:\/\/)?
+  ```
+  This grouping contains two ```?``` quantifiers. This expression is looking for an ```http://``` or an ```https://```. A *single* ```s``` is optional. The same is true for the entire expression included in the parenthesis, which explains why the grouping is followed by a ```?```. Therefore, a valid URL may begin with ```http://``` or ```https://```, or it may not begin with either of them at all (the input might begin with ```www.```). The same applies for the ```/``` at the tail end of that grouping. 
   
-
-### OR Operator
+ - The domain name: 
+ ```
+ ([\da-z\.-]+)\.
+ ```
+ 
+ - The top-level domain: 
+ ```
+ ([a-z\.}{2,6})
+ ```
+ 
+ - The file path:
+ ```
+ ([\/w \.-]*)*
+ ```
 
 ### Character Classes
 
@@ -64,12 +78,6 @@ Quantifiers are how we read occurrences of certain patterns or characters in a r
 ### Bracket Expressions
 
 ### Greedy and Lazy Match
-
-### Boundaries
-
-### Back-references
-
-### Look-ahead and Look-behind
 
 ## Author
 
