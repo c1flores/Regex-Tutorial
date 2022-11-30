@@ -52,22 +52,24 @@ Quantifiers are how we read occurrences of certain patterns or characters in a r
   ```
   (https?:\/\/)?
   ```
-  This grouping contains two ```?``` quantifiers. This expression is looking for an ```http://``` or an ```https://```. A *single* ```s``` is optional. The same is true for the entire expression included in the parenthesis, which explains why the grouping is followed by a ```?```. Therefore, a valid URL may begin with ```http://``` or ```https://```, or it may not begin with either of them at all (the input might begin with ```www.```). The same applies for the ```/``` at the tail end of that grouping. 
+  This grouping contains two ```?``` quantifiers. This expression is looking for an ```http://``` or an ```https://```. A *single* ```s``` is optional. The same is true for the entire expression included in the parenthesis, which explains why the grouping is followed by a ```?```. Therefore, a valid URL may begin with ```http://``` or ```https://```, or it may not begin with either of them at all (the input might begin with ```www.```).
   
- - The domain name: 
+ - The domain name ```(google or wikipedia)```: 
  ```
  ([\da-z\.-]+)\.
  ```
+ This grouping contains the ```+``` quantifier. The bracket expression will accept any single digit character, any lowercase letter from a-z, or the special characters ```.``` or ```-```. The ```+``` quantifier indicates that the pattern must match 1 or more times. 
  
- - The top-level domain: 
+ - The top-level domain ```(.com, .org, .etc)```: 
  ```
  ([a-z\.}{2,6})
  ```
- 
- - The file path:
+ This grouping contains the ``` { 2, 6}``` quantifier. This is used to signify that the pattern must match a minimum of 2 and a maximum of 6 times. Specifically, the bracket expresion indicates that any lowercase letter a-z, a slash, or a dot will produce a match. 
+ - The file path or endpoint ```(/home, /about, /etc)``` :
  ```
- ([\/w \.-]*)*
+ ([\/\w \.-]*)*
  ```
+ This expression signifies that the expression ```[\/\w \.-]``` may match 0 or more times and that ```([a-z\.]{2,6})([\/\w \.-]*)``` may also match 0 or more times. In other words, a forrward slash, any alphanumeric character from the latin alphabet, a sapce, a dot or dash will produce a match. Alternatively, a file or endpoint may not match at all (the URL can be a plain domain). 
 
 ### Character Classes
 
