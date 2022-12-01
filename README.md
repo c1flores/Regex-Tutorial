@@ -100,10 +100,10 @@ This expression will accept any single digit character, any lowercase letter fro
 ```
 This expression will accept the character ```/```, any word character, space, or the character ```.``` or ```-```.
 
-It is important to note that ```.``` denotes a mach for wildcard characters, the ```\.``` seen in the expressions above are looking for the ```.``` charcater explicitly, and not the character class. 
+It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above are looking for the ```.``` character explicitly, and not the character class. 
 
 ### Grouping and Capturing
-While our "Matching a URL" regex is fairly straightforward, Regular expresions can quicKly grow more complicated in an effort to check multiple parts of a string to determine that different sections fulfill different requirements. To break these sections up and **capture** certain patterns, we can use **grouping** constructs. 
+While our "Matching a URL" regex is fairly straightforward, Regular expresions can quickly grow more complicated in an effort to check multiple parts of a string to determine that different sections fulfill different requirements. To break these sections up and **capture** certain patterns, we can use **grouping** constructs. 
 
 The primary way of capturing a certain pattern is by surrounding the expression we wish to capture in parentheses like this: ```/(...)/```. Grouping constructs are powerful becuase they allow us to concatenate patterns or append a quantifier to a group instead of a singular character.
 
