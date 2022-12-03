@@ -37,7 +37,7 @@ In our "Matching a URL" regex, the input string must start and end with somethin
 
 ### Character Classes
 
-A character class in a regex defines a set of characters which can occur in an input string to produce a match. Bracket expressions, as seen in the following examples from our URL regex, ```[\da-z\.-]```  ```[a-z\.]``` ```[\/\w \.-]```, are a type of character class. Here are some other common character classes:
+A character class in a regex defines a set of characters which can occur in an input string to produce a match. Bracket expressions, as seen in the following examples from our URL regex ```[\da-z\.-]```  ```[a-z\.]``` ```[\/\w \.-]```, are a type of character class. Here are some other common character classes:
 
 - ```.``` - Matches any character except the newline charcter (```\n```).
 - ```\d``` - Matches any Arabic numeral digit. This class is equivalent to the bracket expression ```[0-9]```.
@@ -82,7 +82,7 @@ Quantifiers are how we read occurrences of certain patterns or characters in a r
   ```
   (https?:\/\/)?
   ```
-  This grouping contains two ```?``` quantifiers. This expression is looking for an ```http://``` or an ```https://```. A *single* ```s``` is optional. The same is true for the entire expression included in the parenthesis, which explains why the grouping is followed by a ```?```. Therefore, a valid URL may begin with ```http://``` or ```https://```, or it may not begin with either of them at all (the input might begin with ```www.```).
+  This grouping contains two ```?``` quantifiers. This expression is looking for an ```http://``` or an ```https://```. A *single* ```s``` is optional. The same is true for the entire expression included in the parentheses, which explains why the grouping is followed by a ```?```. Therefore, a valid URL may begin with ```http://``` or ```https://```, or it may not begin with either of them at all (the input might begin with ```www.```).
   
  - The domain name ```(google or wikipedia)```: 
  ```
@@ -94,7 +94,7 @@ Quantifiers are how we read occurrences of certain patterns or characters in a r
  ```
  ([a-z\.]{2,6})
  ```
- This grouping contains the ``` { 2, 6}``` quantifier. This is used to signify that the pattern must match a minimum of 2 and a maximum of 6 times. Specifically, the bracket expresion indicates that any lowercase letter ```a-z``` and a dot ```.``` will produce a match. 
+ This grouping contains the ``` { 2, 6}``` quantifier. This is used to signify that the pattern must match a minimum of 2 and a maximum of 6 times. Specifically, the bracket expression indicates that any lowercase letter ```a-z``` and a dot ```.``` will produce a match. 
  
  - The file path or endpoint ```(/home, /about, /etc)``` :
  ```
