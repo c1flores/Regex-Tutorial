@@ -73,7 +73,7 @@ Quantifiers are how we read occurrences of certain patterns or characters in a r
  ```
  ([\/\w \.-]*)*
  ```
- This expression signifies that the expression ```[\/\w \.-]``` may match 0 or more times and that ```([a-z\.]{2,6})([\/\w \.-]*)``` may also match 0 or more times. In the former case, a forrward slash, any alphanumeric character from the latin alphabet, a space, a dot or dash will produce a match. Alternatively in the latter case, a file or endpoint may not match at all (the URL can be a plain domain). 
+ This expression signifies that the expression ```[\/\w \.-]``` may match 0 or more times and that ```([a-z\.]{2,6})([\/\w \.-]*)``` may also match 0 or more times. In the former case, a forward slash, any alphanumeric character from the latin alphabet, a space, a dot or dash will produce a match. Alternatively in the latter case, a file or endpoint may not match at all (the URL can be a plain domain). 
 
 ### Character Classes
 
@@ -103,15 +103,48 @@ This expression will accept the character ```/```, any word character, space, or
 It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above are looking for the ```.``` character explicitly, and not the character class. 
 
 ### Grouping and Capturing
-While our "Matching a URL" regex is fairly straightforward, Regular expresions can quickly grow more complicated in an effort to check multiple parts of a string to determine that different sections fulfill different requirements. To break these sections up and **capture** certain patterns, we can use **grouping** constructs. 
+While our "Matching a URL" regex is fairly straightforward, regular expresions can quickly grow more complicated in an effort to check multiple parts of a string to determine that different sections fulfill different requirements. To break these sections up and **capture** certain patterns, we can use **grouping** constructs. 
 
 The primary way of capturing a certain pattern is by surrounding the expression we wish to capture in parentheses like this: ```/(...)/```. Grouping constructs are powerful becuase they allow us to concatenate patterns or append a quantifier to a group instead of a singular character.
 
 ### Bracket Expressions
 
+A bracket expression is a range of characters inside a set of square brackets (```[]```) that represents a pattern we want to match within an input string. **Bracket expressions** are known as a **positive character group** because they outline the characters we want to include. For example, ```[abc]``` will look for a string that includes ```a``` or ```b``` or ```c```, regardless of the length of the string. Therefore, the following examples would match: ```"aaa"```, ```"bin"```, ```"court"```, ```"abracadabra"```, and ```"bca"```. 
+
+You'll commonly see a hyphen (```-```) used between alphanumeric chracaters (letters and numbers only) to represent a range of those possible characters. This means that ```[a-c]``` and ```[abc]``` will look for the same pattern. 
+
+In our "Matching a URL" regex example, we can break down the bracket expressions as follows:
+
+- ```[\da-z\.-]``` will accept any digit, a lowecase letter from a-z, a dot, or dash.
+- ```[a-z\.]``` will accept any lowercase letter from a-z and a dot.
+- ```[\/\w \.-]``` will accept forward slash, a word character, a space, a dot, or dash.
+
 ### Greedy and Lazy Match
+Quantifiers can be purposed to look for a **greedy** or **lazy** match. A greedy match implies that the quantifier will force the search of an input string to match as many occurrences of particular patterns as possible, while a lazy match denotes that a quanitfier will force the search of an input string to match an occurrence of particular patterns as little as poissible. 
+
+- The ```*```, ```+```, and ```{}``` quantifiers are all greedy matches since they all read up until the end of the string when conducting a pattern search (with the exception of the ```{}``` if a second parameter were to be passed in).
+- The ```?``` quantifier would only match the specifed pattern befre this character one or zero times, implying that it might not reach the end of the input to conduct a search. 
+
+We see examples of the two types of matches below in our "Matching a URL" regex below:
+
+ - The domain name ```(google or wikipedia)```: 
+ ```
+ ([\da-z\.-]+)\.
+ ```
+ The ```+``` quantifier indicates that the pattern must match 1 or more times. 
+ 
+ - The top-level domain ```(.com, .org, .etc)```: 
+ ```
+ ([a-z\.]{2,6})
+ ```
+ This grouping contains the ``` { 2, 6}``` quantifier. This is used to signify that the pattern must match a minimum of 2 and a maximum of 6 times.
+ 
+ - The file path or endpoint ```(/home, /about, /etc)``` :
+ ```
+ ([\/\w \.-]*)*
+ ```
+ This expression signifies that the expression ```[\/\w \.-]``` may match 0 or more times and that ```([a-z\.]{2,6})([\/\w \.-]*)``` may also match 0 or more times.  This implies that a file path or endpoint may not match at all (the URL can be a plain domain). 
 
 ## Author
 
-Christian Flores is a student of the Coding Bootcamp with the University of California, Berkeley. 
-To see more of his work visit his [GitHub Profile](https://github.com/c1flores)
+Christian Flores is a student of the Coding Bootcamp with the University of California, Berkeley. To see more of his work visit his [GitHub Profile](https://github.com/c1flores)
