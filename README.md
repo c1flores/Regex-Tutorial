@@ -6,7 +6,7 @@ When included in code or search algorithms, regular expressions can be used to f
 patterns of characters within a string, or to find and replace a character or sequence of characters 
 within a string. They are also frequently used to validate input.
 
-## Summary
+  ## Matching a URL Example
 ```
 /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
 ```
@@ -120,6 +120,7 @@ In our "Matching a URL" regex example, we can break down the bracket expressions
 - ```[\/\w \.-]``` will accept forward slash, a word character, a space, a dot, or dash.
 
 ### Greedy and Lazy Match
+
 Quantifiers can be purposed to look for a **greedy** or **lazy** match. A greedy match implies that the quantifier will force the search of an input string to match as many occurrences of particular patterns as possible, while a lazy match denotes that a quanitfier will force the search of an input string to match an occurrence of particular patterns as little as poissible. 
 
 - The ```*```, ```+```, and ```{}``` quantifiers are all greedy matches since they all read up until the end of the string when conducting a pattern search (with the exception of the ```{}``` if a second parameter were to be passed in).
