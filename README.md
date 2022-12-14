@@ -60,7 +60,7 @@ This expression will accept any single digit character or any lowercase letter f
 ```
 This expression will accept the forward slash character ```/```, any word character, a space, and a dot ```.``` or dash ```-```.
 
-It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above are looking for the ```.``` character explicitly, and not referencing the character class ```.```. 
+It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above is looking for the dot character  ```.``` explicitly, and not referencing the character class represented by the same cahracter ```.```. 
 
 ### Quantifiers
 
@@ -134,7 +134,7 @@ Quantifiers can be purposed to look for a **greedy** or **lazy** match. A greedy
 
 We see examples of the two types of matches below in our "Matching a URL" regex below:
 
- - The domain name ```(google or wikipedia)```: 
+ - The domain name ```(google or wikipedia, for example)```: 
  ```
  ([\da-z\.-]+)\.
  ```
