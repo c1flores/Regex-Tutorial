@@ -60,7 +60,7 @@ This expression will accept any single digit character or any lowercase letter f
 ```
 This expression will accept the forward slash character ```/```, any word character, a space, and a dot ```.``` or dash ```-```.
 
-It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above is looking for the dot character  ```.``` explicitly, and not referencing the character class represented by the same cahracter ```.```. 
+It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above is looking for the dot character  ```.``` explicitly, and not referencing the character class represented by the same dot ```.``` character. 
 
 ### Quantifiers
 
