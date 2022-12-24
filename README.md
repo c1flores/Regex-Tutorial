@@ -54,13 +54,13 @@ In our URL regex, we see the  ```\d``` and ```\w``` character classes applied in
 ```
 This expression will accept any single digit character or any lowercase letter from ```a-z``` and a dot ```.``` or dash ```-```.
 
-- The alphnumeric character class ```\w```
+- The alphanumeric character class ```\w```
 ```
 [\/\w \.-]
 ```
 This expression will accept the forward slash character ```/```, any word character, a space, and a dot ```.``` or dash ```-```.
 
-It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above is looking for the dot character  ```.``` explicitly, and not referencing the character class represented by the same dot ```.``` character. 
+It is important to note that while ```.``` denotes a character class to match for wildcard characters, the ```\.``` seen in the expressions above is looking for the dot character  ```.``` explicitly, and not referencing the character class represented by the same dot ```.``` character. 
 
 ### Quantifiers
 
