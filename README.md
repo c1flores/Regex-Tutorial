@@ -161,4 +161,4 @@ We see examples of the two types of matches below in our "Matching a URL" regex 
 
 ## About Me
 
-Christian Flores is a student of the Coding Bootcamp associated with the University of California, Berkeley. To see more of his work visit his [GitHub Profile](https://github.com/c1flores)
+Christian Flores is a student of the Coding Bootcamp associated with the University of California, Berkeley. To see more of his work visit his [GitHub Profile](https://github.com/c1flores).
