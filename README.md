@@ -1,5 +1,20 @@
+<!-- omit in toc -->
 # Regex Tutorial
 
+<!-- omit in toc -->
+## Table of Contents
+- [Overview](#overview)
+- [Matching a URL Example](#matching-a-url-example)
+- [Regex Components](#regex-components)
+  - [Anchors](#anchors)
+  - [Character Classes](#character-classes)
+  - [Quantifiers](#quantifiers)
+  - [Grouping and Capturing](#grouping-and-capturing)
+  - [Bracket Expressions](#bracket-expressions)
+  - [Greedy and Lazy Match](#greedy-and-lazy-match)
+ - [About Me](#about-me)
+
+## Overview
 This tutorial seeks to define a regular expression in programming contexts, 
 commonly known as regex. A regex is a sequence of characters that defines a specific search pattern. 
 When included in code or search algorithms, regular expressions can be used to find certain 
@@ -15,14 +30,6 @@ An example of a regex can be seen above. For the purpose of this tutorial, we wi
 of characters that can be used as a regex to search for most URLs, with the exception of some edge cases. The tutorial will break down 
  components of the "Matching a URL" example to explore regex components in general. 
 
-## Table of Contents
-
-- [Anchors](#anchors)
-- [Character Classes](#character-classes)
-- [Quantifiers](#quantifiers)
-- [Grouping and Capturing](#grouping-and-capturing)
-- [Bracket Expressions](#bracket-expressions)
-- [Greedy and Lazy Match](#greedy-and-lazy-match)
 
 ## Regex Components
 
@@ -54,13 +61,13 @@ In our URL regex, we see the  ```\d``` and ```\w``` character classes applied in
 ```
 This expression will accept any single digit character or any lowercase letter from ```a-z``` and a dot ```.``` or dash ```-```.
 
-- The alphanumeric character class ```\w```
+- The alphnumeric character class ```\w```
 ```
 [\/\w \.-]
 ```
 This expression will accept the forward slash character ```/```, any word character, a space, and a dot ```.``` or dash ```-```.
 
-It is important to note that while ```.``` denotes a character class to match for wildcard characters, the ```\.``` seen in the expressions above is looking for the dot character  ```.``` explicitly, and not referencing the character class represented by the same dot ```.``` character. 
+It is important to note that while ```.``` denotes a match for wildcard characters, the ```\.``` seen in the expressions above are looking for the ```.``` character explicitly, and not referencing the character class ```.```. 
 
 ### Quantifiers
 
@@ -134,7 +141,7 @@ Quantifiers can be purposed to look for a **greedy** or **lazy** match. A greedy
 
 We see examples of the two types of matches below in our "Matching a URL" regex below:
 
- - The domain name ```(google or wikipedia, for example)```: 
+ - The domain name ```(google or wikipedia)```: 
  ```
  ([\da-z\.-]+)\.
  ```
@@ -152,6 +159,6 @@ We see examples of the two types of matches below in our "Matching a URL" regex 
  ```
  This expression signifies that the expression ```[\/\w \.-]``` may match 0 or more times and that ```([a-z\.]{2,6})([\/\w \.-]*)``` may also match 0 or more times.  This implies that a file path or endpoint may not match at all (the URL can be a plain domain). 
 
-## Author
+## About Me
 
-Christian Flores is a student of the Coding Bootcamp associated with the University of California, Berkeley. To see more of his work visit his [GitHub Profile](https://github.com/c1flores)
+Christian Flores is a student of the Coding Bootcamp with the University of California, Berkeley. To see more of his work visit his [GitHub Profile](https://github.com/c1flores)
